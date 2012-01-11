@@ -1,0 +1,9 @@
+#!/bin/sh
+
+GEARS_ROOT=/home/httpd/gears
+
+cd $GEARS_ROOT
+for x in *.php; do
+	php_beautifier -s -l "phpBB NewLines(before=if:switch:T_CLASS:T_COMMENT:foreach)" -f $x -o $x.new
+	mv $x.new $x
+done;

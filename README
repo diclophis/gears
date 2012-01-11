@@ -1,0 +1,9 @@
+h1. Gears PHP Framework
+
+This is an old framework of mine I put together sometime in 2006, it should work with PHP5 (I am been testing it / continuing development on it with OSX provided php version PHP 5.3.3 (cli) (built: Aug 22 2010 19:41:55))
+
+h1. How to install in user dir on OSX
+
+# install conf from config/etc/apache/gears_osx_userdir.conf into /etc/apache2/users/<username>.conf (tweak the settings and paths accordingly)
+# mkdir /tmp/templates_c (read-writable by httpd user)
+

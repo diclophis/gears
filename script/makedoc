@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#########################################################################
+# 
+# Script to generatge gears documentation. 
+#
+# Requirements
+# ============
+# Requires that phpdoc is installed. On most systems it can be 
+# installed by running the following under the root account.
+#
+# > pear install PhpDocumentor
+# 
+#
+# Apache Setup
+# ============
+# To host the documentation from this machine add the following
+# to the local httpd.conf
+#
+# <Directory /home/httpd/gears_doc>
+#        AllowOverride None
+#        Order allow,deny
+#        Allow from all  
+# </Directory>
+# Alias /gears_doc /home/httpd/gears_doc
+#
+########################################################################
+
+SOURCE=/home/httpd/gears/lib
+TARGET=/home/httpd/gears_doc
+
+phpdoc -i '*/Smarty/*' -d $SOURCE -t $TARGET -ti 'Gears' -dn "Gears" -o HTML:Smarty:PHP
+

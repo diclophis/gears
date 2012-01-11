@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mysqladmin5 -uroot create gears_model
+mysqladmin5 -uroot create gears_session
+echo "CREATE TABLE php_sessions (session_id varchar(32) NOT NULL, session_expire int(11), session_data longtext, PRIMARY KEY  (session_id), KEY last_updated (session_expire))" | mysql5 -uroot gears_session
+
